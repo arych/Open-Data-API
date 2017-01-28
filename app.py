@@ -14,10 +14,11 @@ from flask import *
 
 ATTENDANCE_DATA_FILE = "./data_sets/PBSPSLM_2005-2013.xlsx"
 CPLC_DATA = "./data_sets/Karachi Killing Data 2013 - CPLC.xls"
-open_data_df = pd.read_excel(ATTENDANCE_DATA_FILE, 0, index_col=None, na_values=['NA'])
-cplc_data_df = pd.read_excel(CPLC_DATA, 'Combined 2013', index_col=None, na_values=['NA'])
 cplc_idx_size = len(cplc_data_df.index._data)
 idx_size = len(open_data_df.index._data)
+open_data_df = pd.read_excel(ATTENDANCE_DATA_FILE, 0, index_col=None, na_values=['NA'])
+cplc_data_df = pd.read_excel(CPLC_DATA, 'Combined 2013', index_col=None, na_values=['NA'])
+
 
 app = Flask(__name__)
 
